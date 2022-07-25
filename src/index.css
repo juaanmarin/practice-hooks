@@ -1,0 +1,53 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+#root{
+  height: 100vh;
+  background-color: #ffea00;
+}
+header{
+  height: 100px;
+  background-color: #006dcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-home{
+  -webkit-text-stroke: 1px rgb(190, 165, 0);
+   font-size: 23px;
+}
+.clock{
+  position: relative;
+  right: -540px;
+}
+section{
+  display: flex;
+  height: 84%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user-register{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+.list-users{
+  margin-top: 40px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-add-home{
+  height: 40px;
+  width: 150px;
+  background-color: #006dcc;
+  font-size: 18px;
+}
