@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import { Header } from '../../layout/Header/Header'
 import { ButtonUi } from '../../UI/ButtonUI/ButtonUi'
 import { InputUI } from '../../UI/InputUI/InputUI'
@@ -12,6 +12,12 @@ export const Home = () => {
         setUseText(text.target.value)
     }
 
+    const nameRef = useRef(null);
+    const addUser = () =>{
+        console.log("eeeen");
+        console.log(nameRef.current.value);
+    }
+    
     return (
     <>
          <Header title='Practice Hooks'/>
@@ -21,28 +27,23 @@ export const Home = () => {
                     <InputUI event={reead}/>
                 </div>
                 <div className='inf-register'>
-                    <h3>{useText}</h3>
+                    <h3 ref={nameRef} >{useText}</h3>
                 </div>
                 <div className='add-users'>
-                    <ButtonUi styleButton="btn-add-home" text='Add User'/>
+                    <ButtonUi styleButton="btn-add-home" text='Add User' event={addUser}/>
                 </div>
             </div>
 
             <div className='list-users'>
                 <h3>User List</h3>
-                
-                {
-                    useListUsers.map((name, i) => {
-                        <div key={i}>
-                            <h2>{name}</h2>
-                        </div>
-                    })
-                }
                 <ul>
-                    <li>{useListUsers[0]}</li>
-                    <li>{useListUsers[1]}</li>
-                    <li>{useListUsers[2]}</li>
-                </ul>                
+                {
+                    useListUsers.map( (item) => (
+                        <li>{item}</li>
+                    ))
+                }
+                </ul>
+              
             </div>
          </section>
     </>
